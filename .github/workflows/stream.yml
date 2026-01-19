@@ -1,1 +1,12 @@
-
+name: Final-Live-2026
+on:
+  workflow_dispatch:
+jobs:
+  stream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Launch
+        run: |
+          ffmpeg -re -i "https://shia.itv.ovh/hls/karbala.m3u8" -c:v libx264 -preset ultrafast -b:v 2000k -c:a aac -f flv "rtmp://a.rtmp.youtube.com/live2/bxv1-229e-2p3p-j3fb-9rfp"
