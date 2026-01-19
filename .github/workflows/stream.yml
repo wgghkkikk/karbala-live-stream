@@ -1,4 +1,4 @@
-name: Final-Live-2026
+name: Final-Live-Success
 on:
   workflow_dispatch:
 jobs:
